@@ -1,0 +1,17 @@
+<html ng-app='myApp'>
+<body ng-controller='TextController'>
+<input ng-model='someText.message'>
+<p>{{someText.message}}</p>
+<script 
+src="lib/angular/angular.min.js">
+</script>
+
+<script type="text/javascript">
+var myAppModule = angular.module('myApp', []);
+
+myAppModule.controller('TextController', function($scope){
+	var someText = {};
+	someText.message = 'You have my money';
+	$scope.someText = someText;
+});
+</script>
