@@ -1,0 +1,32 @@
+<html ng-app='myApp'>
+<body>
+<ul ng-controller='BakerListController'>
+	<li ng-repeat="baker in bakers">
+		<a href="/baker/view/{{baker.id}}">{{ baker.name }}</a>
+	</li>
+	<button ng-click="insertBaker()">Insertar a Diego</button>
+</ul>
+
+<script 
+src="lib/angular/angular.min.js">
+</script>
+<script 
+src="lib/angular/angular-route.min.js">
+</script>
+<script type="text/javascript">
+angular.module('myApp', ['ngRoute']);
+
+bakers = [
+	{id:1, name:'jota'},
+	{id:2, name: 'jarreta'},
+	{id:29, name: 'puppy'}
+]
+
+function BakerListController($scope){
+	$scope.bakers = bakers;
+
+	$scope.insertBaker = function(){
+		$scope.bakers.splice(2,0,{name: 'hector', id: 700});
+	}
+}
+</script>
