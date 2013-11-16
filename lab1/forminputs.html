@@ -4,6 +4,8 @@
 	Starting: <input ng-change="computeNeeded()" ng-model="funding.startingEstimate">
 	Recommendation: <span ng-bind="funding.needed"></span>
 	<button>Fun my startup</button>
+	<br>
+	<button ng-click="reset()">Reset</button>
 </form>
 <script 
 src="lib/angular/angular.min.js">
@@ -23,6 +25,11 @@ function StartUpController($scope){
 	$scope.requestFunding = function(){
 		window.alert('sorry');
 	}
+
+	$scope.reset = function(){
+		$scope.funding.startingEstimate = 0;
+	}
+	;
 }
 </script>
 </body>
